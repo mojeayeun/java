@@ -1,3 +1,6 @@
+//git usage
+//http://jwgye.tistory.com/38
+
 import java.util.Scanner;
 
 public class Fibonacc {

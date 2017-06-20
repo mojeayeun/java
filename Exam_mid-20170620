@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class Exam {
+
+	Scanner mScanner;		
+	
+	public Exam() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public static void main(String[] args) {
+		
+		Exam ex = new Exam();
+		
+		ex.mScanner = new Scanner(System.in);
+		ex.exam1();
+		ex.exam2();
+		ex.exam3();
+				
+		ex.exam4();
+		ex.exam5();
+		ex.mScanner.close();
+	}
+
+	//exam1
+	private void exam1(){
+		System.out.println("[Answer1].Hellow World");
+	}
+	
+	//exam2
+	private void exam2() {
+		System.out.println("[Answer2-1].What is your name ?");
+				
+		String name = mScanner.nextLine();
+		System.out.println("[Answer2-2] Hellow " + name);
+		
+		
+	}
+	
+	
+	//exam3
+	private void exam3(){
+		System.out.println("[Answer3-1] How old are you ? ");
+		
+		int age = mScanner.nextInt();
+		
+		
+		if (age < 0 || age > 100){
+			System.out.println("[Answer3-2] Age can not over 100 or 0 ");
+			exam3();
+		}else{
+			System.out.println("[Answer3-3] Your age is " + String.valueOf(age));
+		}
+	
+		
+	}
+	
+	//exam4
+	private void exam4(){
+		System.out.println("[Answer4] print from 0 to 100 ");
+		for (int i= 0;i <= 100; i++){
+			
+			if (i > 0){
+				if (i % 3 == 0 && i % 5 == 0){
+					System.out.print("FizzBuzz,");
+				}else if (i % 3 == 0){
+					System.out.print("Fizz,");
+				}else if (i % 5 == 0){
+					System.out.print("Buzz,");
+				}else{
+					System.out.print(i + ",");
+				}
+			}else{
+				System.out.print(i + ",");
+						
+			}
+		}
+		System.out.println("\n");
+		
+	}
+
+	
+	//exam5
+	private void exam5(){
+		
+		System.out.println("[Answer5] Enter the prime-number ? ");
+		
+		int num = mScanner.nextInt();
+	
+		if (checkPrimeNumber(num)){
+			System.out.println("[Answer5-1] " + num + " is prime-number ");
+			
+		}else{
+			System.out.println("[Answer5-2] " + num + " is not prime-number ");
+		}
+		
+		exam5();
+	}
+	
+	private boolean checkPrimeNumber(int num){
+		boolean retVal = true;
+		
+		for (int i= 2 ; i < num ; i++){
+  	
+	    	if (num % i == 0){
+	    		retVal = false;
+	    		break;
+	    	}
+	    }
+		
+		return retVal;
+	}
+
+	
+	
+}
+
+

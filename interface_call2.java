@@ -1,4 +1,8 @@
 
+//UI Thread(Main Thread)에서 처리하기 위해서
+//mResponseHander.post 를 통해서 메세지 큐에 넣으면
+//mResponseHnader가 큐로 부터 받아서 처리한다. (handleMessage라는 메소드에서 수행)
+
 public class Download {
 
     private Handler mResponseHander;
